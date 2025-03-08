@@ -12,5 +12,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get 'about' => 'about#index'
+
+  get 'sign_up' => 'registrations#new'
+  post 'sign_up' => 'registrations#create'
+
+  get 'login'  => 'sessions#new'
+  post 'login' => 'sessions#create'
+
+  delete 'logout' => 'sessions#destroy'
+
   root 'main#index'
 end
