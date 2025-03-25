@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   get 'about' => 'about#index'
 
+  get 'password' => 'passwords#edit', as: :edit_password
+  patch 'password' => 'passwords#update'
+
   get 'sign_up' => 'registrations#new'
   post 'sign_up' => 'registrations#create'
 
@@ -20,6 +23,11 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
 
   delete 'logout' => 'sessions#destroy'
+
+  get 'password/reset' => 'password_resets#new'
+  post 'password/reset' => 'password_resets#create'
+  get 'password/reset/edit' => 'password_resets#edit'
+  patch 'password/reset/edit' => 'password_resets#update'
 
   root 'main#index'
 end

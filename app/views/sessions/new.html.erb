@@ -8,6 +8,7 @@
     <div class="mb-3">
         <%= form.label :password, class: "form-label" %>
         <%= form.password_field :password, class: "form-control" %>
+        <%= link_to 'Forgot Password?', password_reset_path, class: 'd-block mt-3' %>
     </div>
     <%= form.submit "Login", class: "btn btn-primary" %>
 <% end%>
